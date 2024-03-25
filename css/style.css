@@ -1,0 +1,78 @@
+h2 {
+    color: chartreuse;
+}
+
+.minha-classe-1 {
+    color: rgb(238, 255, 0);
+}
+
+.minha-classe-2 {
+    color: goldenrod;
+}
+
+#meu-id-1 {
+    color: red;
+    text-align: center;
+}
+
+#meu-id-2 {
+    color: red;
+    text-align: center;
+}
+
+.background-image {
+    background-image: url('/assets/c.jpg');
+    width: 200px;
+    height: 200px;
+    color:rgb(247, 6, 6);
+    background-position: center;
+    background-size: cover;
+    text-align: justify;
+    padding: 20px 20px 0px 20px;
+    font-style: italic;
+}
+
+h3 {
+    color: red;
+    text-align: center;
+}
+
+@media screen and (max-width: 300px) {
+    h3 {
+        color: blue;
+        text-align: left;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    h3 {
+        color: blue;
+        text-align: left;
+    }
+}
+
+.elemento {
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+}
+
+@media screen and (orientation: landscape) {
+    .elementos {
+        display: inline-block;
+    }
+}
+
+.elemento-filho {
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    margin-top: 20px;
+}
+
+.elemento-pai {
+    display: flex
+    flex-direction: row;
+    gap: 20px;
+}
+
