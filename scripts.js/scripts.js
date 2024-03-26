@@ -58,17 +58,49 @@ if(user ==='Nathan'){
 
 // operador ternário
 // false === 'Nathan' ? console.log('Usuário autenticado') : console.log('Usuário inexistente');
-const curso = 'ENC'
-switch(curso) {
-    case 'ENC':
-    console.log('Engenharia de Computação');
-    break;
-case 'ESW':
-    console.log('Engenharia de Software');
-    break;
-case 'ENC':
-    console.log('Engenharia Mecatrônica');
-    break;
-default:
-    console.log('Curso Inexistente');
-}
+//const curso = 'ENC'
+//switch(curso) {
+//    case 'ENC':
+//   console.log('Engenharia de Computação');
+//    break;
+//case 'ESW':
+//    console.log('Engenharia de Software');
+//    break;
+//case 'ENC':
+//    console.log('Engenharia Mecatrônica');
+//    break;
+//default:
+   // console.log('Curso Inexistente');
+//}
+
+// laços de repetição
+
+let j = 0
+// while(j < 10){
+//    console.log('indice:' , j);
+    j++;
+// }
+
+//let k = 0;
+//do {
+//   console.log('indice: ', k)
+//   k++;
+//} while(k < 10);
+
+//for (let i = 0; i < 10; i++) {
+//    console.log('indice: ',i);
+
+// arrays
+const nomes = ('rodrigo', 'maria', 'joão');
+// console.log(nomes);
+// console.log(nomes[0]);
+// console.log(nomes.length); // propriedade
+nomes[0] = 'pedro';
+// console.log(nomes);
+
+// métodos
+nomes.push('ana'); // insere no final
+nomes.unshift('tairine'); // insere no inicio
+// console.log(nomes);
+// nomes.pop(); // remove do final
+// console.log(nomes);
