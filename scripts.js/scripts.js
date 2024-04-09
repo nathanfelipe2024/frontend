@@ -103,4 +103,5 @@ nomes.push('ana'); // insere no final
 nomes.unshift('tairine'); // insere no inicio
 // console.log(nomes);
 // nomes.pop(); // remove do final
-// console.log(nomes);
+// console.log(nomes);  
+
