@@ -1,5 +1,7 @@
+import { useState } from 'react'
 import './App.css'
-import TableNathan from './Components/tablenathan'
+import ProductForm from './Components/ProductForm'
+import ProductTable from './Components/ProductTable'
 
 // import ConditionalComponent1 from './Components/ConditionalComponent1'
 // import ConditionalComponent2 from './Components/ConditionalComponent2'
@@ -9,19 +11,56 @@ import TableNathan from './Components/tablenathan'
 // import MyButtonComponent from './Components/MyButtonComponent'
 
 function App() {
-  const products = [
-    {id: 1, name: "Produto A", price: "R$ 10,00", estoque: 13},
-    {id: 2, name: "Produto B", price: "R$ 30,00", estoque: 9},
-    {id: 3, name: "Produto C", price: "R$ 60,00", estoque: 18},
-    {id: 4, name: "Produto D", price: "R$ 99,00", estoque: 15},
-    {id: 5, name: "Produto E", price: "R$ 450,00", estoque: 14},
-]
+
+  const [products, setproducts] = useState([])
+  const [id, setId] = useState(1)
+  const [name, setName] = useState("")
+  const [price, setPrice] = useState("")
+  const [stock, setStock] = useState("")
+  const [edit, setEdit] = useState(false)
+  const clearForm = () => {
+      setName("")
+      setPrice("")
+      setStock("")
+  }
+  const saveProduct = (e) => {
+      e.preventDefault();
+      if(!edit) {
+          setId(v => v + 1);
+           setproducts((prevProducts) => [...prevProducts, { id, name, price, stock }])
+      }
+
+      if(edit) {
+          const productIndex = products.findIndex(prod => prod.id ===id)
+          products[productIndex] = { id, name, price, stock}
+          setproducts(products)
+          setEdit(false)
+      }
+      clearForm()
+  }
+
+  const deleteProduct = (id) => {
+      setproducts(products.filter((prod) => prod.id !== id))
+  }
+
+  const editProduct = (id) => {
+      const product = products.find(prod => prod.id === id)
+      setId(product.id)
+      setName(product.name)
+      setPrice(product.price)
+      setStock(product.stock)
+      setEdit(true)
+  }
+
+  const handleName = (e) => {setName(e.target.value)}
+  const handlePrice = (e) => {setPrice(e.target.value)}
+  const handleStock = (e) => {setStock(e.target.value)}
 
 return (
 //  let component;
 //  let condition = true;
 //  if (condition) {
-//     component = <ConditionalComponent1 />
+//     component = <ConditionalComponent1 />]
 //  } else {
 //     component = <ConditionalComponent2 />
 //  }
@@ -113,9 +152,9 @@ return (
 //       <useStateComponente1 />
 //     </div>
   <>
-  <TableNathan />
+  <ProductTable products={products} deletar={deleteProduct} edit={editProduct} />
+  <ProductForm name={name} price={price} stock={stock} handleName={handleName} handlePrice={handlePrice} handleStock={handleStock} salvar={saveProduct} />
   </>      
   )
 }
 export default App
-
